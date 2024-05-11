@@ -1,3 +1,6 @@
+# Flip a coin with probability of success (heads) p = 0.3
+# Use sample sizes 10, 100, 1000
+
 p <- 0.3
 ns <- c(10, 100, 1000)
 

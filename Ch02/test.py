@@ -1,17 +1,17 @@
 import numpy as np
-from scipy.special import gamma as G
-from scipy.integrate import quad, dblquad
+from scipy.integrate import dblquad
 
-def f(t, v):
-  return G((v+1)/2)/G(v/2)*(1+t**2/v)**(-(v+1)/2)*1/(np.sqrt(np.pi*v))
+# Task: Find normalization constant of f(x,y) = x**2*y constrained to x**2 <= y <= 1
+# Check distribution by integrating
 
-print(quad(lambda t: f(t, 1), -np.inf, np.inf))
+c = 1/dblquad(lambda y, x: x**2*y, -1, 1, lambda x: x**2, 1)[0]
 
-c2 = 1/dblquad(lambda y,x : x**2*y, -1, 1, lambda x: x**2, 1)[0]
 
-def f2(y,x):
-  return c2*x**2*y
+def f(y, x):
+    return (x**2 <= y and y <= 1)*c*x**2*y
 
-print(dblquad(f2, -1, 1, lambda x: x**2, 1))
 
-print(dblquad(f2, 0, 1, lambda x: x**2, lambda x: x))
+print(f"P(R^2) = {dblquad(f, -1, 1, 0, 1)}") # vanishes outside this region
+
+# Calculate probability on A = {x,y: x**2 <= y <= x}
+print(f"P(A) = {dblquad(f, 0, 1, lambda x: x**2, lambda x: x)}")

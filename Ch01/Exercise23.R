@@ -1,3 +1,5 @@
+# Test the independence of A (even dice rolls) and B (dice rolls 4 and under)
+
 A <- c(2, 4, 6)
 B <- 1:4
 n <- 100000
