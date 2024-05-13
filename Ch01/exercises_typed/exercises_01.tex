@@ -1,0 +1,23 @@
+\documentclass[chapter={01}]{exercises_allofstats}
+
+\usepackage{statstools}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Problem 2}
+Prove the following statements:
+\begin{enumerate}[leftmargin=*]
+    \item $\prob(A^c) = 1 - \prob(A)$
+    
+    By definition of set complements, we can see that $A^c$ and $A$ are disjoint sets. Using \textbf{Axiom 3} of the definition of probability, we see that $\prob{\Omega} = \prob(A^c\cup A) = \prob(A^c) + \prob(A)$. Since the probability of the sample space is 1, we can then solve for $\prob(A^c) = 1 - \prob(A)$.
+
+    \item $\prob(\emptyset) = 0$
+    
+    Using 1 we know that $\prob(\emptyset) = 1 - \prob(\Omega) = 0$.
+
+    \item If $A\subset B$ then $\prob(A) \leq \prob(B)$
+    
+    Since $A$ is a subset of $B$, then we must have $B = A \cup (B - A)$, a union of two disjoint sets. Therefore $\prob(B) = \prob(A) + \prob(B - A)$. Since $\prob(B - A)$ is at least zero, this means that $\prob(B) \geq \prob(A)$ and equality only holds if $\prob(B - A) = 0$.
+\end{enumerate}
+\end{document}
