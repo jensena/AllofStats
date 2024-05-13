@@ -1,8 +1,11 @@
 {
 	"folders": [
-		{
-			"path": "."
-		}
-	],
+        {
+            "path": "."
+        },
+        {
+            "path": "../../../../../../usr/local/texlive/texmf-local/tex/latex"
+        }
+    ],
 	"settings": {}
 }

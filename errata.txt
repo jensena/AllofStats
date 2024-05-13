@@ -1,0 +1,4 @@
+#List of found errata
+page, number, type, description
+29, 2.17, example, typset Phi instead of F
+30, t Distribution, definition, missing normalization constant (see appendix too)
